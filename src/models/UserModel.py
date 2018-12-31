@@ -8,7 +8,6 @@ class UserModel(db.Model):
   User Model
   """
 
-  # table name
   __tablename__ = 'users'
 
   id = db.Column(db.Integer, primary_key=True)
@@ -19,7 +18,6 @@ class UserModel(db.Model):
   modified_at = db.Column(db.DateTime)
   blogposts = db.relationship('BlogpostModel', backref='users', lazy=True)
 
-  # class constructor
   def __init__(self, data):
     """
     Class constructor
